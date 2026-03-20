@@ -1,13 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>CMW Movers</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CMW Movers & Furniture | Atlanta Moving & Delivery</title>
+
+<meta name="description" content="CMW Movers offers furniture delivery, moving services, and affordable setup in Atlanta. Fast, reliable, and professional.">
+
+<style>
+body { margin:0; font-family:Arial; background:#f4f4f4; }
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  background: black;
+  color: gold;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px;
+  z-index:1000;
+}
+nav a { color:gold; text-decoration:none; margin:0 10px; }
+
+/* HERO */
+.hero {
+  background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+  url('https://images.unsplash.com/photo-1582582494700-0c27d6c6b2c3');
+  background-size:cover;
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.hero h1 { font-size:40px; }
+
+/* CTA BUTTONS */
+.cta-btn {
+  background: gold;
+  color:black;
+  padding:12px 20px;
+  margin:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* SECTION */
+.section { padding:50px 20px; text-align:center; }
+
+/* PRODUCTS */
+.products {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.card {
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+.card img { width:100%; }
+
+/* BUTTON */
+button {
+  background:black;
+  color:gold;
+  border:none;
+  padding:10px;
+  margin-top:5px;
+  cursor:pointer;
+}
+
+/* TRUST SECTION */
+.trust {
+  background:white;
+  padding:30px;
+}
+
+/* FORM */
+form input, form textarea {
+  width:80%;
+  padding:10px;
+  margin:10px;
+}
+
+/* FOOTER */
+footer {
+  background:black;
+  color:gold;
+  text-align:center;
+  padding:20px;
+}
+</style>
 </head>
+
 <body>
-    <h1>Welcome to CMW Movers</h1>
-    <p>Your reliable moving partner.</p>
+
+<!-- NAV -->
+<nav>
+  <div><strong>CMW Movers</strong></div>
+  <div>
+    <a href="#shop">Shop</a>
+    <a href="#moving">Moving</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Fast Moving & Furniture Delivery</h1>
+  <p>Serving Atlanta & Surrounding Areas</p>
+
+  <a href="tel:17865103429"><button class="cta-btn">📞 Call Now</button></a>
+  <a href="sms:17865103429"><button class="cta-btn">💬 Text Now</button></a>
+</div>
+
+<!-- TRUST -->
+<div class="trust">
+  <h2>Why Choose CMW Movers?</h2>
+  <p>✔ Same Day Service</p>
+  <p>✔ Affordable Prices</p>
+  <p>✔ Professional & Reliable</p>
+</div>
+
+<!-- SHOP -->
+<div class="section" id="shop">
+  <h2>Furniture For Sale</h2>
+
+  <div class="products">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Sofa Set</h3>
+      <p>$500 + Delivery</p>
+      <button onclick="cashApp('Sofa Set',500)">Cash App</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Dining Table</h3>
+      <p>$300</p>
+      <button onclick="cashApp('Dining Table',300)">Cash App</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Bed Frame</h3>
+      <p>$400</p>
+      <button onclick="cashApp('Bed Frame',400)">Cash App</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- MOVING -->
+<div class="section" id="moving">
+  <h2>Book a Move</h2>
+
+  <form action="https://formspree.io/f/yourformid" method="POST">
+    <input type="text" name="name" placeholder="Name" required><br>
+    <input type="text" name="phone" placeholder="Phone" required><br>
+    <input type="text" name="from" placeholder="Move From"><br>
+    <input type="text" name="to" placeholder="Move To"><br>
+    <textarea name="details" placeholder="Details"></textarea><br>
+    <button type="submit">Request Quote</button>
+  </form>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <p>📍 Atlanta Area</p>
+  <p>📞 786-510-3429</p>
+</div>
+
+<footer>
+  <p>© 2026 CMW Movers</p>
+</footer>
+
+<script>
+function cashApp(product, price){
+  window.location.href = "https://cash.app/$charles9537/" + price;
+}
+</script>
+
 </body>
 </html>
