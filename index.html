@@ -107,6 +107,7 @@ footer {
     <a href="#shop">Shop</a>
     <a href="#moving">Moving</a>
     <a href="#contact">Contact</a>
+    <a href="#unsubscribe">Unsubscribe</a>
   </div>
 </nav>
 
@@ -178,14 +179,53 @@ footer {
   <p>📞 786-510-3429</p>
 </div>
 
+<!-- UNSUBSCRIBE -->
+<div class="section" id="unsubscribe">
+  <h2>Unsubscribe</h2>
+  <p>Want to stop receiving communications from us? Enter your details below and we'll remove you from our contact list.</p>
+
+  <form id="unsubscribe-form" action="https://formspree.io/f/yourformid" method="POST">
+    <input type="hidden" name="_subject" value="Unsubscribe Request">
+    <input type="email" name="email" placeholder="Email Address" required><br>
+    <input type="text" name="phone" placeholder="Phone (optional)"><br>
+    <button type="submit" class="cta-btn">Unsubscribe</button>
+  </form>
+
+  <p id="unsubscribe-confirmation" style="display:none; color:green; font-weight:bold;">
+    ✔ Your unsubscribe request has been submitted. We'll remove you from our list shortly.
+  </p>
+</div>
+
 <footer>
   <p>© 2026 CMW Movers</p>
+  <a href="#unsubscribe" style="color:gold;">Unsubscribe</a>
 </footer>
 
 <script>
 function cashApp(product, price){
   window.location.href = "https://cash.app/$charles9537/" + price;
 }
+
+document.getElementById('unsubscribe-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var formData = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  }).then(function(response) {
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('unsubscribe-confirmation').style.display = 'block';
+    } else {
+      alert('Something went wrong. Please try again or call us at 786-510-3429.');
+    }
+  }).catch(function() {
+    alert('Something went wrong. Please try again or call us at 786-510-3429.');
+  });
+});
 </script>
 
 </body>
